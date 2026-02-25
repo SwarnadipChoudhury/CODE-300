@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Smart Revision Booster</title>
   <link rel="stylesheet" href="style.css" />
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
 </head>
 <body>
 
+  <!-- ===== HEADER ===== -->
   <header>
     <div class="logo">⚡ SmartRevise</div>
-    <p class="tagline">Adaptive Local PDF Quiz System</p>
+    <p class="tagline">Adaptive Quiz &amp; Flashcard System</p>
   </header>
 
   <main>
 
+    <!-- ===== SECTION 1: FILE UPLOAD ===== -->
     <section id="upload-section" class="card">
       <div class="card-icon">📄</div>
       <h2>Upload Your Study Document</h2>
-      <p class="subtitle">Our local parser will extract MCQs directly from your PDF</p>
+      <p class="subtitle">Upload a PDF to begin your adaptive revision session</p>
 
       <label class="upload-area" id="upload-label" for="file-input">
         <span class="upload-icon">☁️</span>
@@ -33,12 +33,9 @@
       <button id="start-quiz-btn" class="btn btn-primary hidden">
         🚀 Start Quiz
       </button>
-      
-      <div class="format-note">
-        <small>Note: For best results, PDF should contain questions followed by A) B) C) D) and "Answer: A"</small>
-      </div>
     </section>
 
+    <!-- ===== SECTION 2: QUIZ ===== -->
     <section id="quiz-section" class="card hidden">
       <div class="quiz-header">
         <span id="topic-badge" class="badge"></span>
@@ -56,22 +53,26 @@
       <button id="next-btn" class="btn btn-primary hidden">Next →</button>
     </section>
 
+    <!-- ===== SECTION 3: RESULTS ===== -->
     <section id="result-section" class="card hidden">
       <div class="card-icon">🏆</div>
       <h2 id="result-title"></h2>
       <p id="score-display" class="score-big"></p>
 
+      <!-- Weak Area Detection -->
       <div class="topic-scores">
-        <h3>📊 Performance Summary</h3>
-        <div class="topic-row" id="topic-summary-row">
-          <span class="topic-label">Extracted Questions Score</span>
+        <h3>📊 Topic-Wise Performance</h3>
+        <div class="topic-row" id="topicA-row">
+          <span class="topic-label">Topic A — JavaScript Basics</span>
           <span id="topicA-score" class="topic-percent"></span>
         </div>
-        <div id="topicB-row" style="display:none;">
-            <span id="topicB-score"></span>
+        <div class="topic-row" id="topicB-row">
+          <span class="topic-label">Topic B — Web Fundamentals</span>
+          <span id="topicB-score" class="topic-percent"></span>
         </div>
       </div>
 
+      <!-- Mastery Heatmap -->
       <div class="heatmap-section">
         <h3>🔥 Mastery Heatmap</h3>
         <div id="heatmap-container" class="heatmap"></div>
@@ -82,6 +83,7 @@
         </div>
       </div>
 
+      <!-- Action Buttons -->
       <div class="result-actions">
         <button id="retry-wrong-btn" class="btn btn-warning hidden">
           🔄 Retry Wrong Questions
@@ -95,7 +97,7 @@
   </main>
 
   <footer>
-    <p>Built for CSE Revision · Smart Revision Booster · 2026</p>
+    <p>Built for Hackathon · Smart Revision Booster · 2025</p>
   </footer>
 
   <script src="script.js"></script>
